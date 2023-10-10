@@ -9,7 +9,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <style>
         body {
-            font-family: "Open Sans", sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
@@ -32,6 +32,7 @@
             background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
             padding: 10px; /* Espaciado interno para el título */
             border-radius: 5px; /* Bordes redondeados */
+            display: inline-block; /* Evita que el fondo se extienda por toda la pantalla */
         }
 
         @keyframes fadeIn {
@@ -45,10 +46,8 @@
         }
 
         .banner {
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            padding: 20px;
         }
 
         .container {
@@ -56,6 +55,10 @@
             margin: 0 auto;
             text-align: center;
             padding: 20px;
+            border-radius: 10px; /* Bordes redondeados para la tarjeta */
+            background-color: white; /* Fondo blanco para la tarjeta */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra para la tarjeta */
+            margin-top: 20px;
         }
 
         p {
@@ -100,6 +103,24 @@
             header h1 {
                 font-size: 1.5rem; /* Tamaño de fuente reducido para pantallas pequeñas */
             }
+            .banner {
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            padding: 10x;
+        }
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .social-icon {
+            margin-right: 10px;
+            color: white;
+        }
+
+        .social-icon:hover {
+            color: #007BFF;
         }
     </style>
     <script>
@@ -149,6 +170,11 @@
         </ul>
         <br>
         <p class="language-text">Choose your language ↑</p>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-wordpress"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-x"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
     </div>
 </body>
 </html>
