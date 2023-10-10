@@ -105,7 +105,7 @@
             }
             .banner {
             background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-            padding: 10x;
+            padding: 10px;
         }
         }
 
@@ -122,6 +122,45 @@
         .social-icon:hover {
             color: #007BFF;
         }
+
+        /* Estilos para la sección "Credits" */
+.credits-head {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.credits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.credit-link {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.credit-link:hover {
+    text-decoration: underline; /* Añade subrayado en el enlace al pasar el mouse sobre él */
+    color: #0056b3;
+}
+
+/* Estilos para la posición de los elementos en las esquinas inferiores */
+.bottom-right {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.bottom-left {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -175,6 +214,14 @@
             <a href="#" class="social-icon"><i class="fab fa-x"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
         </div>
+    </div>
+    
+<a href="https://lucfreelance.com" class="bottom-right">Lucfreelance.com</a>
+<p class="credits-head bottom-left"></p>
+<ul class="credits-list bottom-left">
+    <li><a href="https://thecatapi.com" class="credit-link">The Cat API</a> at <a href="https://thecatapi.com" class="credit-link">thecatapi.com</a></li>
+    <li><a href="https://www.pexels.com" class="credit-link">Pexels</a> at <a href="https://www.pexels.com" class="credit-link">pexels.com</a></li>
+</ul>
     </div>
 </body>
 </html>
