@@ -16,7 +16,7 @@
         }
 
         header {
-            background-image: url('https://previews.123rf.com/images/valueinvestor/valueinvestor1912/valueinvestor191200028/136470011-banner-lindos-gatos-y-corazones-en-flores.jpg');
+            background-image: url('https://images.pexels.com/photos/11831730/pexels-photo-11831730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
             background-size: cover;
             background-position: center;
             color: white;
@@ -101,8 +101,22 @@
                 font-size: 1.5rem; /* Tamaño de fuente reducido para pantallas pequeñas */
             }
         }
-    </style>    
+    </style>
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const languageText = document.querySelector(".language-head");
+        const languages = ["Welcome to the Random Cats app!", "¡Bienvenido a la aplicación Random Cats!", "Bienvenue sur l'application Random Cats!", "Bem-vindo ao aplicativo Random Cats!"];
+        let currentIndex = 0;
+
+        function updateLanguageText() {
+            languageText.textContent = languages[currentIndex];
+            currentIndex = (currentIndex + 1) % languages.length;
+        }
+
+        setInterval(updateLanguageText, 6000);
+        updateLanguageText();
+        });
+        
         document.addEventListener("DOMContentLoaded", function () {
         const languageText = document.querySelector(".language-text");
         const languages = ["Choose your language ↑", "Escoge tu idioma ↑", "Choisissez votre langue ↑", "Escolha o seu idioma ↑"];
@@ -125,7 +139,7 @@
         </div>
     </header>
     <div class="container">
-        <p>Welcome to Random Cats appsite!</p>
+        <p class="language-head">Welcome to Random Cats appsite!</p>
         <img src="cat.png" alt="Cat Animation" class="cat-animation">
         <ul>
             <li><a href="en/index.html">English</a></li>
