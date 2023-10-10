@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Cats by Lucfreelance</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
@@ -104,9 +104,9 @@
                 font-size: 1.5rem; /* Tamaño de fuente reducido para pantallas pequeñas */
             }
             .banner {
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-            padding: 10px;
-        }
+                background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+                padding: 10px;
+            }
         }
 
         .social-icons {
@@ -124,43 +124,27 @@
         }
 
         /* Estilos para la sección "Credits" */
-.credits-head {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
+        .credits-head {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
 
-.credits-list {
-    list-style: none;
-    padding: 0;
-}
+        /* Estilos para la posición de los elementos en las esquinas inferiores */
+        .bottom-right {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
 
-.credit-link {
-    text-decoration: none;
-    color: #007BFF;
-}
-
-.credit-link:hover {
-    text-decoration: underline; /* Añade subrayado en el enlace al pasar el mouse sobre él */
-    color: #0056b3;
-}
-
-/* Estilos para la posición de los elementos en las esquinas inferiores */
-.bottom-right {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    text-decoration: none;
-    color: #007BFF;
-}
-
-.bottom-left {
-    position: fixed;
-    left: 20px;
-    bottom: 20px;
-    text-decoration: none;
-    color: #007BFF;
-}
-
+        .bottom-left {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -174,20 +158,6 @@
         }
 
         setInterval(updateLanguageText, 6000);
-        updateLanguageText();
-        });
-        
-        document.addEventListener("DOMContentLoaded", function () {
-        const languageText = document.querySelector(".language-text");
-        const languages = ["Choose your language ↑", "Escoge tu idioma ↑", "Choisissez votre langue ↑", "Escolha o seu idioma ↑"];
-        let currentIndex = 0;
-
-        function updateLanguageText() {
-            languageText.textContent = languages[currentIndex];
-            currentIndex = (currentIndex + 1) % languages.length;
-        }
-
-        setInterval(updateLanguageText, 3000);
         updateLanguageText();
         });
     </script>
@@ -207,21 +177,36 @@
             <li><a href="fr/index.html">Français</a></li>
             <li><a href="po/index.html">Português</a></li>
         </ul>
-        <br>
         <p class="language-text">Choose your language ↑</p>
         <div class="social-icons">
             <a href="#" class="social-icon"><i class="fab fa-wordpress"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-x"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
         </div>
-    </div>
-    
-<a href="https://lucfreelance.com" class="bottom-right">Lucfreelance.com</a>
-<p class="credits-head bottom-left"></p>
-<ul class="credits-list bottom-left">
-    <li><a href="https://thecatapi.com" class="credit-link">The Cat API</a> at <a href="https://thecatapi.com" class="credit-link">thecatapi.com</a></li>
-    <li><a href="https://www.pexels.com" class="credit-link">Pexels</a> at <a href="https://www.pexels.com" class="credit-link">pexels.com</a></li>
-</ul>
+        <a href="https://lucfreelance.com" class="bottom-right">Lucfreelance.com</a>
+        <p class="credits-head bottom-left"></p>
+        <button id="creditButton" class="bottom-left
+ <button id="creditButton" class="bottom-left">Source By: thecatapi.com</button>
+        <script>
+            const creditButton = document.getElementById("creditButton");
+
+            const credits = [
+                { text: "Source By: thecatapi.com", url: "https://thecatapi.com" },
+                { text: "Images from: pexels.com", url: "https://www.pexels.com" },
+            ];
+
+            let currentIndex = 0;
+
+            function updateCredit() {
+                const currentCredit = credits[currentIndex];
+                creditButton.textContent = currentCredit.text;
+                creditButton.href = currentCredit.url;
+                currentIndex = (currentIndex + 1) % credits.length;
+            }
+
+            setInterval(updateCredit, 10000);
+            updateCredit();
+        </script>
     </div>
 </body>
 </html>
