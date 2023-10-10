@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Cats by Lucfreelance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <style>
         body {
@@ -15,19 +16,35 @@
         }
 
         header {
-            background-color: #007BFF;
+            background-image: url('https://previews.123rf.com/images/valueinvestor/valueinvestor1912/valueinvestor191200028/136470011-banner-lindos-gatos-y-corazones-en-flores.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
             padding: 20px;
         }
 
+        /* Aplicamos una capa semitransparente al título */
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease;
+            background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            padding: 10px; /* Espaciado interno para el título */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
         h1 {
             font-size: 2rem;
-            margin-bottom: 10px; /* Añadido para ajustar el espacio */
+            margin-bottom: 10px;
         }
 
         .banner {
-            /* Ajusta la altura del banner a 150px y mantiene el título centrado */
             height: 100px;
             display: flex;
             justify-content: center;
@@ -61,28 +78,47 @@
             padding: 10px 20px;
             border-radius: 5px;
             display: inline-block;
+            transition: background-color 0.3s;
         }
 
         a:hover {
             background-color: #0056b3;
         }
+
+        .cat-animation {
+            width: 80px; /* Redujimos el tamaño del gato */
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem; /* Tamaño de fuente reducido para pantallas pequeñas */
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Banner con altura ajustada -->
         <div class="banner">
-            <h1>Random Cats</h1>
+            <h1><i class="fas fa-cat"></i> Random Cats</h1>
         </div>
     </header>
     <div class="container">
-        <p>Welcome to Random Cats website!</p>
+        <p>Welcome to Random Cats appsite!</p>
+        <img src="cat.png" alt="Cat Animation" class="cat-animation">
         <ul>
             <li><a href="en/index.html">English</a></li>
             <li><a href="es/index.html">Español</a></li>
             <li><a href="fr/index.html">Français</a></li>
             <li><a href="po/index.html">Português</a></li>
         </ul>
+        <br>
         <p>Choose your language ↑</p>
     </div>
 </body>
