@@ -160,6 +160,21 @@
         setInterval(updateLanguageText, 6000);
         updateLanguageText();
         });
+
+        
+        document.addEventListener("DOMContentLoaded", function () {
+        const languageText = document.querySelector(".language-text");
+        const languages = ["Choose your language ↑", "Elige tu idioma ↑", "Choisissez votre langue ↑", "Escolha o seu idioma ↑"];
+        let currentIndex = 0;
+
+        function updateLanguageText() {
+            languageText.textContent = languages[currentIndex];
+            currentIndex = (currentIndex + 1) % languages.length;
+        }
+
+        setInterval(updateLanguageText, 3000);
+        updateLanguageText();
+        });
     </script>
 </head>
 <body>
