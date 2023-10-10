@@ -101,7 +101,22 @@
                 font-size: 1.5rem; /* Tamaño de fuente reducido para pantallas pequeñas */
             }
         }
-    </style>
+    </style>    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const languageText = document.querySelector(".language-text");
+        const languages = ["Choose your language ↑", "Escoge tu idioma ↑", "Choisissez votre langue ↑", "Escolha o seu idioma ↑"];
+        let currentIndex = 0;
+
+        function updateLanguageText() {
+            languageText.textContent = languages[currentIndex];
+            currentIndex = (currentIndex + 1) % languages.length;
+        }
+
+        setInterval(updateLanguageText, 3000);
+        updateLanguageText();
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -119,7 +134,7 @@
             <li><a href="po/index.html">Português</a></li>
         </ul>
         <br>
-        <p>Choose your language ↑</p>
+        <p class="language-text">Choose your language ↑</p>
     </div>
 </body>
 </html>
